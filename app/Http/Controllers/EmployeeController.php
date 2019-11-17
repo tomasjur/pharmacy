@@ -77,12 +77,16 @@ class EmployeeController extends Controller
      */
     public function index2()
     {
-        //$data = EmployeeController::index();
+        $data = EmployeeController::index();
         //$employees = json_decode($data);
         //$employees = $data->jsonSerialize();
 
         //$url = urlencode('127.0.0.1:8000/api/employee');
         //$data = json_decode(file_get_contents('/employee'), true);
+
+        //$client = new \GuzzleHttp\Client();
+        //$response = $client->request('GET', '127.0.0.1:8000/api/employee');
+        //$data = $response->getBody()->getContents();
         return view ('employee', compact('data'));
     }
 

@@ -64,6 +64,13 @@
                                 @endif
                             </div>
                         </div>
+                        <br>
+                        <div class="form-group row">
+                            <p style="margin-left:265px">OR</p>
+                            <div class="col-md-8 offset-md-4">
+                                <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
