@@ -1,21 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <center><a href="{{ route('employeeAdd') }}" class="btn btn-primary" style="width: 50px;
+    {{--<center><a href="{{ route('add-employee') }}" class="btn btn-primary" style="width: 50px;
             height: 50px;
             padding: 1px 13px;
             border-radius: 25px;
             font-size: 10px;
-            text-align: center;"><h1>+</h1></a></center><br>
+            text-align: center;"><h1>+</h1></a></center><br>--}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-15">
                 <div>
-                    {{--<div class="card-header">Dashboard</div>--}}
 
                     <div>
-                        {{--{{json_encode($data)}}--}}
-                        <table class="table">
+                        {{--<table class="table">
                             <tr>
                                 <th>ID</th>
                                 <th>First name</th>
@@ -34,13 +32,13 @@
                                     <td>{{ $value['email'] }}</td>
                                     <td>{{ $value['working_years'] }}</td>
                                     <td>
-                                        <a href="/employees/edit/{{$value['id']}}" id="edit-user" data-id="{{ $value['id'] }}"
+                                        <a href="javascript:void(0)" id="edit-user" data-id="{{ $value['id'] }}"
                                            class="btn btn-warning">Edit</a>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
-                        </table>
+                        </table>--}}
                     </div>
                 </div>
             </div>

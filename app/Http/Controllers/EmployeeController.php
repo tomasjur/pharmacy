@@ -72,6 +72,8 @@ class EmployeeController extends Controller
         return response()->json();
     }
 
+    // Interface methods --------------------------
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -92,6 +94,11 @@ class EmployeeController extends Controller
 
     public function add()
     {
-        return view ('add-employee');
+        return view ('employeeAdd');
+    }
+
+    public function edit($id)
+    {
+        return view('employeeEdit');
     }
 }

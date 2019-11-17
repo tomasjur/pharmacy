@@ -30,7 +30,10 @@ Route::get('/employees', 'EmployeeController@index2', function () {
 })->middleware('auth')->name('employee');
 Route::get('employees/add', 'EmployeeController@add', function () {
     //whatever
-})->middleware('auth')->name('add-employee');
+})->middleware('auth')->name('employeeAdd');
+Route::get('employees/edit/{id}', 'EmployeeController@edit', function () {
+    //whatever
+})->middleware('auth')->name('employeeEdit');
 
 // Order
 Route::get('/orders', 'OrderController@index2', function () {
