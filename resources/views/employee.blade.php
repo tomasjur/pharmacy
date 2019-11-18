@@ -34,9 +34,10 @@
                                     <td>{{ $value['email'] }}</td>
                                     <td>{{ $value['working_years'] }}</td>
                                     <td>
-                                        <a href="/employees/edit/{{$value['id']}}" id="edit-user" data-id="{{ $value['id'] }}"
+                                        <a href="/employees/edit/{{$value['id']}}" id="employeeEdit" data-id="{{ $value['id'] }}"
                                            class="btn btn-warning">Edit</a>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <a href="{{route('employeeDelete', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
+                                           class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -17,14 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// OAuth2 Facebook login
+// --------------------- OAuth2 Facebook login
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
-// Home
+// --------------------- Home
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Employee
+// --------------------- Employee
 Route::get('/employees', 'EmployeeController@index2', function () {
     //whatever
 })->middleware('auth')->name('employee');
@@ -34,23 +34,26 @@ Route::get('employees/add', 'EmployeeController@add', function () {
 Route::get('employees/edit/{id}', 'EmployeeController@edit', function () {
     //whatever
 })->middleware('auth')->name('employeeEdit');
+Route::get('employees/delete/{id}', 'EmployeeController@delete', function() {
+    //whatever
+})->middleware('auth')->name('employeeDelete');
 
-// Order
+// --------------------- Order
 Route::get('/orders', 'OrderController@index2', function () {
     //whatever
 })->middleware('auth')->name('order');
 
-// Prescription
+// --------------------- Prescription
 Route::get('/prescriptions', 'PrescriptionController@index2', function () {
     //whatever
 })->middleware('auth')->name('prescription');
 
-// Sale
+// --------------------- Sale
 Route::get('/sales', 'SaleController@index2', function () {
     //whatever
 })->middleware('auth')->name('sale');
 
-// Stock
+// --------------------- Stock
 Route::get('/stocks', 'StockController@index2', function () {
     //whatever
 })->middleware('auth')->name('stock');

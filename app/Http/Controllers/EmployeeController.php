@@ -6,6 +6,7 @@ use App\Employee;
 use App\Http\Resources\EmployeeResource;
 use App\Http\Resources\EmployeeResourceCollection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -100,5 +101,12 @@ class EmployeeController extends Controller
     public function edit($id)
     {
         return view('employeeEdit');
+    }
+
+    public function delete($id)
+    {
+        $employee = Employee::find($id);
+        $response = EmployeeController::destroy($employee);
+        return $this->index2();
     }
 }
