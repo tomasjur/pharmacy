@@ -38,10 +38,13 @@
                                            class="btn btn-warning">Edit</a>
                                         <a href="{{route('employeeDelete', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
                                            class="btn btn-danger">Delete</a>
+                                        {{--<a href="{{route('employee.destroy', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
+                                           class="btn btn-danger">Delete</a>--}}
                                     </td>
                                 </tr>
                             @endforeach
                         </table>
+                        <form method="get" action="{{route('employee.index')}}"></form>
                     </div>
                 </div>
             </div>

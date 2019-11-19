@@ -37,6 +37,7 @@ Route::get('employees/edit/{id}', 'EmployeeController@edit', function () {
 Route::get('employees/delete/{id}', 'EmployeeController@delete', function() {
     //whatever
 })->middleware('auth')->name('employeeDelete');
+//Route::apiResource('employee', 'EmployeeController');
 
 // --------------------- Order
 Route::get('/orders', 'OrderController@index2', function () {
