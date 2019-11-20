@@ -97,6 +97,11 @@ class EmployeeController extends Controller
     {
         return view ('employeeAdd');
     }
+    public function store2(Request $request)
+    {
+        $response = EmployeeController::store($request);
+        return redirect('/employees')->with('success', 'Successfully added!');
+    }
 
     public function edit($id)
     {
@@ -107,6 +112,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find($id);
         $response = EmployeeController::destroy($employee);
-        return $this->index2();
+        return redirect('/employees')->with('success', 'Successfully deleted!');
+        //return $this->index2();
     }
 }

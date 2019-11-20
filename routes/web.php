@@ -26,16 +26,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // --------------------- Employee
 Route::get('/employees', 'EmployeeController@index2', function () {
-    //whatever
+    // get all employees list
 })->middleware('auth')->name('employee');
 Route::get('employees/add', 'EmployeeController@add', function () {
-    //whatever
+    // employee add form
 })->middleware('auth')->name('employeeAdd');
+Route::get('employees/added', 'EmployeeController@store2', function () {
+    // submit employee
+})->middleware('auth')->name('employeeAdded');
 Route::get('employees/edit/{id}', 'EmployeeController@edit', function () {
-    //whatever
+    // employee edit form
 })->middleware('auth')->name('employeeEdit');
 Route::get('employees/delete/{id}', 'EmployeeController@delete', function() {
-    //whatever
+    // employee delete
 })->middleware('auth')->name('employeeDelete');
 //Route::apiResource('employee', 'EmployeeController');
 

@@ -12,7 +12,14 @@
             <div class="col-md-15">
                 <div>
                     {{--<div class="card-header">Dashboard</div>--}}
+                    <div class="col-sm-12">
 
+                        @if(session()->get('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                        @endif
+                    </div>
                     <div>
                         {{--{{json_encode($data)}}--}}
                         <table class="table">
@@ -44,7 +51,6 @@
                                 </tr>
                             @endforeach
                         </table>
-                        <form method="get" action="{{route('employee.index')}}"></form>
                     </div>
                 </div>
             </div>

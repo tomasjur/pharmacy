@@ -8,7 +8,7 @@
                     <div>
                         <center><h2>Add employee</h2></center>
                         <br>
-                        <form method="post" action="{{route('employee.store')}}">
+                        <form method="get" action="{{route('employeeAdded')}}">
                             <div class="form-group">
                                 <table class="table">
                                     <tr>
