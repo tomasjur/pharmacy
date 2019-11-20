@@ -11,34 +11,33 @@
         <div class="row justify-content-center">
             <div class="col-md-15">
                 <div>
-
                     <div>
-                        {{--<table class="table">
-                            <tr>
-                                <th>ID</th>
-                                <th>First name</th>
-                                <th>Last name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Working time (years)</th>
-                                <th><i>Actions</i></th>
-                            </tr>
-                            @foreach(json_decode(json_encode($data), true) as $value)
-                                <tr>
-                                    <td>{{ $value['id'] }}</td>
-                                    <td>{{ $value['first_name'] }}</td>
-                                    <td>{{ $value['last_name'] }}</td>
-                                    <td>{{ $value['phone'] }}</td>
-                                    <td>{{ $value['email'] }}</td>
-                                    <td>{{ $value['working_years'] }}</td>
-                                    <td>
-                                        <a href="javascript:void(0)" id="edit-user" data-id="{{ $value['id'] }}"
-                                           class="btn btn-warning">Edit</a>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </table>--}}
+                        <center><h2>Edit employee</h2></center>
+                        <br>
+                        <form method="get" action="{{route('employeeEdited', $employee->id)}}">
+                            <div class="form-group">
+                                <table class="table">
+                                    <tr>
+                                        <th><label>First Name</label></th><td><input type="text" name="first_name" value="{{$employee->first_name}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label>Last Name</label></th><td><input type="text" name="last_name" value="{{$employee->last_name}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label>Phone</label></th><td><input type="tel" name="phone" value="{{$employee->phone}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label>Email</label></th><td><input type="email" name="email" value="{{$employee->email}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label>Working years</label></th><td><input type="number" name="working_years" value="{{$employee->working_years}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2"><center><button type="submit" class="btn btn-primary">Update</button></center></th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

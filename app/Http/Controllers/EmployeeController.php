@@ -93,6 +93,7 @@ class EmployeeController extends Controller
         return view ('employee', compact('data'));
     }
 
+    // ADD
     public function add()
     {
         return view ('employeeAdd');
@@ -103,11 +104,20 @@ class EmployeeController extends Controller
         return redirect('/employees')->with('success', 'Successfully added!');
     }
 
+    // EDIT
     public function edit($id)
     {
-        return view('employeeEdit');
+        $employee = Employee::find($id);
+        return view('employeeEdit', compact('employee'));
+    }
+    public function update2(Request $request, $id)
+    {
+        $employee = Employee::find($id);
+        $response = EmployeeController::update($employee, $request);
+        return redirect('/employees')->with('success', 'Successfully updated!');
     }
 
+    // DELETE
     public function delete($id)
     {
         $employee = Employee::find($id);

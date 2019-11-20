@@ -37,6 +37,9 @@ Route::get('employees/added', 'EmployeeController@store2', function () {
 Route::get('employees/edit/{id}', 'EmployeeController@edit', function () {
     // employee edit form
 })->middleware('auth')->name('employeeEdit');
+Route::get('employees/edited/{id}', 'EmployeeController@update2', function () {
+    // submit employee
+})->middleware('auth')->name('employeeEdited');
 Route::get('employees/delete/{id}', 'EmployeeController@delete', function() {
     // employee delete
 })->middleware('auth')->name('employeeDelete');

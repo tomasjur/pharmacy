@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <center><a href="{{ route('add-employee') }}" class="btn btn-primary" style="width: 50px;
+    <center><a href="{{ route('employeeAdd') }}" class="btn btn-primary" style="width: 50px;
             height: 50px;
             padding: 1px 13px;
             border-radius: 25px;

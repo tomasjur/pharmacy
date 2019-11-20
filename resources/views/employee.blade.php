@@ -44,7 +44,7 @@
                                         <a href="/employees/edit/{{$value['id']}}" id="employeeEdit" data-id="{{ $value['id'] }}"
                                            class="btn btn-warning">Edit</a>
                                         <a href="{{route('employeeDelete', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
-                                           class="btn btn-danger">Delete</a>
+                                           class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                                         {{--<a href="{{route('employee.destroy', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
                                            class="btn btn-danger">Delete</a>--}}
                                     </td>
