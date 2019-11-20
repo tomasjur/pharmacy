@@ -12,34 +12,42 @@
             <div class="col-md-15">
                 <div>
                     {{--<div class="card-header">Dashboard</div>--}}
+                    <div class="col-sm-12">
 
+                        @if(session()->get('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                        @endif
+                    </div>
                     <div>
                         {{--{{json_encode($data)}}--}}
                         <table class="table">
-                            {{--<tr>
+                            <tr>
                                 <th>ID</th>
-                                <th>First name</th>
-                                <th>Last name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Working time (years)</th>
+                                <th>Supplier</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                {{--<th>Working time (years)</th>--}}
                                 <th><i>Actions</i></th>
                             </tr>
                             @foreach(json_decode(json_encode($data), true) as $value)
                                 <tr>
                                     <td>{{ $value['id'] }}</td>
-                                    <td>{{ $value['first_name'] }}</td>
-                                    <td>{{ $value['last_name'] }}</td>
-                                    <td>{{ $value['phone'] }}</td>
-                                    <td>{{ $value['email'] }}</td>
-                                    <td>{{ $value['working_years'] }}</td>
+                                    <td>{{ $value['supplier'] }}</td>
+                                    <td>{{ $value['product'] }}</td>
+                                    <td>{{ $value['quantity'] }}</td>
+                                    <td>{{ $value['price'] }}</td>
+                                    {{--<td>{{ $value['working_years'] }}</td>--}}
                                     <td>
-                                        <a href="javascript:void(0)" id="edit-user" data-id="{{ $value['id'] }}"
+                                        {{--<a href="/employees/edit/{{$value['id']}}" id="employeeEdit" data-id="{{ $value['id'] }}"
                                            class="btn btn-warning">Edit</a>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <a href="{{route('employeeDelete', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
+                                           class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>--}}
                                     </td>
                                 </tr>
-                            @endforeach--}}
+                            @endforeach
                         </table>
                     </div>
                 </div>
