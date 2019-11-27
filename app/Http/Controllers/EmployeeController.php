@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * @return EmployeeResourceCollection
      */
@@ -90,6 +94,7 @@ class EmployeeController extends Controller
         //$client = new \GuzzleHttp\Client();
         //$response = $client->request('GET', '127.0.0.1:8000/api/employee');
         //$data = $response->getBody()->getContents();
+        $a = $_POST;
         return view ('employee', compact('data'));
     }
 

@@ -1,0 +1,5 @@
+services:
+	-
+		class: PHPStan\Rules\Superglobal
+		tags:
+			- phpstan.rules.rule
