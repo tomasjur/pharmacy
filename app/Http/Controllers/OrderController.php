@@ -75,7 +75,6 @@ class OrderController extends Controller
     public function index2()
     {
         $data = OrderController::index();
-
         return view ('order', compact('data'));
     }
 }
