@@ -29,6 +29,7 @@
                                 <th>Product</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
+                                <th>Creation date</th>
                                 {{--<th>Working time (years)</th>--}}
                                 <th><i>Actions</i></th>
                             </tr>
@@ -39,7 +40,7 @@
                                     <td>{{ $value['product'] }}</td>
                                     <td>{{ $value['quantity'] }}</td>
                                     <td>{{ $value['price'] }}</td>
-                                    {{--<td>{{ $value['working_years'] }}</td>--}}
+                                    <td>{{ $value['created_at'] }}</td>
                                     <td>
                                         {{--<a href="/employees/edit/{{$value['id']}}" id="employeeEdit" data-id="{{ $value['id'] }}"
                                            class="btn btn-warning">Edit</a>
