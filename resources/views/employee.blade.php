@@ -14,11 +14,11 @@
                     {{--<div class="card-header">Dashboard</div>--}}
                     <div class="col-sm-12">
 
-                        @if(session()->get('success'))
+                        {{--@if(session()->get('success'))
                             <div class="alert alert-success">
                                 {{ session()->get('success') }}
                             </div>
-                        @endif
+                        @endif--}}
                     </div>
                     <div>
                         {{--{{json_encode($data)}}--}}
@@ -43,16 +43,45 @@
                                     <td>
                                         <a href="/employees/edit/{{$value['id']}}" id="employeeEdit" data-id="{{ $value['id'] }}"
                                            class="btn btn-warning">Edit</a>
-                                        <a href="{{route('employeeDelete', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
-                                           class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
-                                        {{--<a href="{{route('employee.destroy', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
-                                           class="btn btn-danger">Delete</a>--}}
+                                        <a class="btn btn-danger" data-mytitle="Title" data-mydesctiption="Description"
+                                           data-catid="{{$value['id']}}" data-toggle="modal" data-target="#delete"
+                                            id="employeeDelete">Delete</a>
+                                        {{--<a href="{{route('employeeDelete', $value['id'])}}" id="employeeDelete" data-id="{{ $value['id'] }}"
+                                           class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>}}--}}
                                     </td>
                                 </tr>
                             @endforeach
                         </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    {{--Modal--}}
+    <div class="modal" tabindex="-1" role="dialog" id="delete" aria-labelledby="deleteModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('employeeDelete', $value['id'])}}" method="get">
+                    {{--{{method_field('delete')}}--}}
+                    {{csrf_field()}}
+                    <div class="modal-body">
+                        <p class="text-center">
+                            Are you sure you want to delete this?
+                        </p>
+                        <input type="hidden" name="category_id" id="cat_id" value="">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
+                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -98,4 +98,10 @@
         </main>
     </div>
 </body>
+<footer>
+    <br><br><br><br><br>
+    <center>
+        <div class="footer" style="width: 100%; background-color:#C5C5C5;"><b>© Copyright 2019 Tomas Jurevicius</b></div>
+    </center>
+</footer>
 </html>
