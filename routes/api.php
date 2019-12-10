@@ -13,11 +13,11 @@ use App\Sale;
 |
 */
 
-Route::apiResource('/sale', 'SaleController')->middleware('auth:api');
+Route::apiResource('/sale', 'SaleController');//->middleware('auth:api');
 Route::apiResource('/employee', 'EmployeeController');//->middleware('auth:api');
-Route::apiResource('/order', 'OrderController')->middleware('auth');
-Route::apiResource('/prescription', 'PrescriptionController')->middleware('auth');
-Route::apiResource('/stock', 'StockController')->middleware('auth');
+Route::apiResource('/order', 'OrderController');//->middleware('auth');
+Route::apiResource('/prescription', 'PrescriptionController');//->middleware('auth');
+Route::apiResource('/stock', 'StockController');//->middleware('auth');
 /*Route::get('/sale/{sale}', 'SaleController@show');*/
 /*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

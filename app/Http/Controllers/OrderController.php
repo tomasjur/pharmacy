@@ -77,4 +77,15 @@ class OrderController extends Controller
         $data = OrderController::index();
         return view ('order', compact('data'));
     }
+
+    // ADD
+    public function add()
+    {
+        return view ('orderAdd');
+    }
+    public function store2(Request $request)
+    {
+        $response = OrderController::store($request);
+        return redirect('/orders')->with('success', 'Successfully added!');
+    }
 }

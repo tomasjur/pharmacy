@@ -49,6 +49,12 @@ Route::get('employees/delete/{id}', 'EmployeeController@delete', function() {
 Route::get('/orders', 'OrderController@index2', function () {
     //whatever
 })->middleware('auth')->name('order');
+Route::get('orders/add', 'OrderController@add', function () {
+    // employee add form
+})->middleware('auth')->name('orderAdd');
+Route::get('orders/added', 'OrderController@store2', function () {
+    // submit employee
+})->middleware('auth')->name('orderAdded');
 
 // --------------------- Prescription
 Route::get('/prescriptions', 'PrescriptionController@index2', function () {
